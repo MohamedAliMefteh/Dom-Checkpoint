@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+.cart-container{
+    background-color: rgba(179, 179, 179, 0.144);
+    padding: 10px;
+}
+.items{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.btn-order{
+    width: 100%;
+}
+p{
+    padding: 10px;
+}
+.icons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+.adding-icons{
+   display: flex;
+   justify-content: space-between;
+   width: 30%;
+}
+i{
+    cursor: pointer;
+}
