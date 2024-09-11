@@ -2,7 +2,8 @@ const add= document.querySelector(".add-item")
 const cart=document.querySelector(".cart-container")
 add.addEventListener("click", function(){
 
-
+  var randprice=Math.random() * (200 - 50) +30;
+var initPrice=Math.round(randprice)
 
   var item= document.createElement("div")
   item.classList.add("items")
@@ -12,7 +13,7 @@ add.addEventListener("click", function(){
   icons.classList.add("icons")
   var price= document.createElement("p")
   price.classList.add("price")
-  price.innerHTML=("Price")
+  price.innerHTML=initPrice
   var quantity= document.createElement("p")
   quantity.classList.add("quantity")
   quantity.innerHTML=1
@@ -27,7 +28,7 @@ add.addEventListener("click", function(){
   minus.classList.add('fa-solid' ,'fa-minus')
   var like=document.createElement("i")
   like.classList.add('fa-regular', 'fa-heart')
-
+  var totalPrice=document.getElementById("total")
 
 
 
@@ -47,16 +48,27 @@ add.addEventListener("click", function(){
 
   plus.addEventListener('click',function(){
     quantity.innerHTML=Number(quantity.innerHTML)+1
+    price.innerHTML=initPrice*Number(quantity.innerHTML)
+    var prices=document.querySelectorAll(".price")
+    prices.forEach(element => {
+      totalPrice.innerHTML=Number(element.innerHTML)+totalPrice
+    });
+   
   })
   minus.addEventListener('click',function(){
     if (Number(quantity.innerHTML) > 1){
     quantity.innerHTML=Number(quantity.innerHTML)-1
+    price.innerHTML=`Price:${initPrice*Number(quantity.innerHTML)}$`
   }
   })
   like.addEventListener('click',function(){
     like.className=('fa-solid fa-heart')
   })
 
+  remove.addEventListener('click',function(){
+    item.remove()
+  })
+  
 
 
 })

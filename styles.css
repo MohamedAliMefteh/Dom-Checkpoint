@@ -22,6 +22,7 @@ body{
 }
 .btn-order{
     width: 100%;
+    
 }
 p{
     padding: 10px;
@@ -39,4 +40,9 @@ p{
 }
 i{
     cursor: pointer;
+}
+.add-item{
+    position: absolute;
+    align-self: flex-start;
+    left: 650px;
 }
